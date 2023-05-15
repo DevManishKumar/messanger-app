@@ -69,7 +69,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="space-y-12">
           <div className="border-b border-gray-900/10 pb-12">
-            <h2 
+            <h2
               className="
                 text-base 
                 font-semibold 
@@ -86,15 +86,15 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
             <div className="mt-10 flex flex-col gap-y-8">
               <Input
                 disabled={isLoading}
-                label="Name" 
-                id="name" 
-                errors={errors} 
-                required 
+                label="Name"
+                id="name"
+                errors={errors}
+                required
                 register={register}
               />
               <div>
-                <label 
-                  htmlFor="photo" 
+                <label
+                  htmlFor="photo"
                   className="
                     block 
                     text-sm 
@@ -108,21 +108,19 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                 <div className="mt-2 flex items-center gap-x-3">
                   <Image
                     width="48"
-                    height="48" 
-                    className="rounded-full" 
-                    src={image || currentUser?.image || '/images/placeholder.jpg'}
+                    height="48"
+                    className="rounded-full"
+                    src={
+                      image || currentUser?.image || "/images/placeholder.jpg"
+                    }
                     alt="Avatar"
                   />
-                  <CldUploadButton 
-                    options={{ maxFiles: 1 }} 
-                    onUpload={handleUpload} 
-                    uploadPreset="pgc9ehd5"
+                  <CldUploadButton
+                    options={{ maxFiles: 1 }}
+                    onUpload={handleUpload}
+                    uploadPreset="p1pdxdpl"
                   >
-                    <Button
-                      disabled={isLoading}
-                      secondary
-                      type="button"
-                    >
+                    <Button disabled={isLoading} secondary type="button">
                       Change
                     </Button>
                   </CldUploadButton>
@@ -132,7 +130,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
           </div>
         </div>
 
-        <div 
+        <div
           className="
             mt-6 
             flex 
@@ -141,23 +139,16 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
             gap-x-6
           "
         >
-          <Button 
-            disabled={isLoading}
-            secondary 
-            onClick={onClose}
-          >
+          <Button disabled={isLoading} secondary onClick={onClose}>
             Cancel
           </Button>
-          <Button 
-            disabled={isLoading}
-            type="submit"
-          >
+          <Button disabled={isLoading} type="submit">
             Save
           </Button>
         </div>
       </form>
     </Modal>
-  )
+  );
 }
 
 export default SettingsModal;
